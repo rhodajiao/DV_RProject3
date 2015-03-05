@@ -1,0 +1,13 @@
+---
+title: "R Project 3: Population, Education and Income Data Across US Counties"
+output: html_document
+---
+Rhoda Jiao and Maytee Chantharayukhont
+
+```{r, warning = FALSE}
+source("../01 Data/libraries.R", echo = TRUE)
+source("../01 Data/censusdata.R", echo = TRUE)
+source("../02 Data Wrangling/wrangle.R", echo = TRUE)
+source("../03 Visualizations/vis.R", echo = TRUE)
+```
+
