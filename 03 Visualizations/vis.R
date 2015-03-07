@@ -1,11 +1,8 @@
-plot1 <- ggplot(educationPop, aes(x=AREA_NAME,y=ENROLL_2009/POPULATION_2010))+geom_point()+theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
-plot1 <- plot1 + labs(x="Area Name", y="% of Population Enrolled in Public School")
+plot1 <- ggplot(educationPop, aes(x=AREA_NAME,y=ENROLL_2009/POPULATION_2010)) + geom_point(color="cadetblue",aes(size=POPULATION_2010/1000000)) + ggtitle("State Enrollment in Public Schools (2009)") + labs(x="State", y="Percent of Total Population Enrolled") + theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5,size=6), plot.title=element_text(size=14, face="bold", vjust=2), panel.background=element_rect(fill='grey95')) + scale_size_continuous(name="Total Population (Millions)")
 print(plot1)
 
-plot2 <- ggplot(medianIncomePlot, aes(x=MEDIAN_INCOME_2009)) + geom_histogram(binwidth=3000)
-plot2 <- plot2+ labs(x="Median Household Income in 2009", y="Number of Counties")
+plot2 <- ggplot(medianIncomePlot, aes(x=MEDIAN_INCOME_2009)) + geom_histogram(binwidth=3000, color="firebrick", fill="white") + ggtitle("Median Income of TX Households by County (2009)") + labs(x="Median Household Income ($)", y="Number of Counties") + theme(plot.title=element_text(size=16, face="bold", vjust=2), panel.background=element_rect(fill='grey30')) + scale_x_continuous(breaks=c(20000,30000,40000,50000,60000,70000,80000))
 print(plot2)
 
-plot3 <- ggplot(countyPopEdu, aes(x=ENROLL_2009/POPULATION_2010, y=MEDIAN_INCOME_2009)) + geom_point()
-plot3 <- plot3 + labs(x="% of Population Enrolled in Public School",y="Median Household income in 2009")
+plot3 <- ggplot(countyPopEdu, aes(x=ENROLL_2009/POPULATION_2010, y=MEDIAN_INCOME_2009)) + geom_point(aes(color=REGION, size=POPULATION_2010/1000000)) + scale_size_continuous(range=c(1,10), name = "Total Population (Millions)") + ggtitle("Median Income by Enrollment in Public Schools (2009)") + labs(x="Percent of Total Population Enrolled", y="Median Household Income ($)") + theme(plot.title=element_text(size=14, face="bold", vjust=2), panel.background=element_rect(fill='grey90'))+ scale_color_discrete(name="Region")  + scale_y_continuous(breaks=c(20000,30000,40000,50000,60000,70000,80000,90000,100000,110000,12000)) + scale_x_continuous(breaks=c(0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0))
 print(plot3)

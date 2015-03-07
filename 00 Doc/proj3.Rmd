@@ -1,5 +1,5 @@
 ---
-title: "R Project 3: Population, Education and Income Data Across US Counties"
+title: "R Project 3: Population, Education, and Income Data Across US Counties"
 output: html_document
 ---
 Rhoda Jiao and Maytee Chantharayukhont
