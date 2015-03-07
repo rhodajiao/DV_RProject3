@@ -9,5 +9,8 @@ source("../01 Data/libraries.R", echo = TRUE)
 source("../01 Data/censusdata.R", echo = TRUE)
 source("../02 Data Wrangling/wrangle.R", echo = TRUE)
 source("../03 Visualizations/vis.R", echo = TRUE)
+source("../03 Visualizations/pngmaker.R", echo = FALSE)
 ```
+<img src="../00 Doc/categoricals.png" />
+<img src="../00 Doc/noncategoricals.png" />
 
